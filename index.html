@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional Developer Portfolio">
+  <title>Yash | Developer Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/images/favicon.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"></div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="dark-toggle"><button id="theme-toggle">🌙</button></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Narender</h1>
+      <h2>Frontend Developer | Typescript & React </h2>
+      <p>I build fast, responsive, and visually appealing websites using HTML, CSS, and JavaScript & Learning Typescript , React .
+         Passionate about turning creative designs into seamless user experiences.Building responsive and modern web applications.</p>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="assets/Yash_Resume.pdf" class="btn btn-outline" download>Download Resume</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.6HqwoVsrZWYgIOYU9-Be8QHaHa?pid=Api&P=0&h=180" alt="Yash">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="bio">
+        <p>Hello! I'm Narender, a passionate Frontend Developer specializing in building modern web applications with JavaScript, HTML, CSS, Typescript, and React.js. I love creating dynamic, responsive, and user-friendly experiences.</p>
+      </div>
+      <div class="skills">
+        <h3>Skills</h3>
+        <div class="skill-bar">
+          <span>HTML</span>
+          <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>CSS</span>
+          <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>JavaScript</span>
+          <div class="bar"><div class="fill" style="width: 65%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>Typescript & React</span>
+          <div class="bar"><div class="fill" style="width: 45%;"></div></div>
+           <div class="skill-bar">
+          <span>Git & GitHub</span>
+          <div class="bar"><div class="fill" style="width: 55%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="web">Web</button>
+      <button data-filter="js">JavaScript</button>
+    </div>
+    <div class="project-grid">
+      <!-- Project Example -->
+      <div class="project-card" data-category="web">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.AhjRvsXgcvfCcr8Zj07lcgHaE7?pid=Api&P=0&h=180" alt="Project 1">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript.</p>
+        <a href="#" target="_blank" class="btn">View Code</a>
+      </div>
+      <div class="project-card" data-category="js">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.XVpHtHVK1RVooXmpXfsJxAHaFW?pid=Api&P=0&h=180" alt="Project 2">
+        <h3>Todo App</h3>
+        <p>Interactive JavaScript To-do application with local storage support.</p>
+        <a href="#" target="_blank" class="btn">View Code</a>
+      </div>
+      <!-- Add more projects dynamically via JS if needed -->
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience & Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Frontend Developer at Lupyd </h3>
+        <span>2025 - Present</span>
+        <p>Developed Frontend applications using Typescript , React</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Bachelor of Data Science</h3>
+        <span>2022 - 2025</span>
+        <p>Completed degree with focus on Web Development and  Passionate about turning creative designs into seamless user experiences.
+            Building responsive and modern web applications </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+        <p class="form-response"></p>
+      </form>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Yash. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
