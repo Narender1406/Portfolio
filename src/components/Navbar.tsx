@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <span className="logo">👾</span>
+        <span className="logo">←→</span>
 
         <ul className={`nav-links ${open ? "open" : ""}`}>
           <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>

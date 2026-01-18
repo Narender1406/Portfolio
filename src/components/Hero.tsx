@@ -17,6 +17,15 @@ export default function Hero() {
         <p className="hero-subtitle typing">
           Frontend Developer · React & TypeScript
         </p>
+           <div className="hero-buttons">
+          <a
+            href="/Narender_Kolipaka_Resume.pdf"
+            download
+            className="resume-btn"
+          >
+            Download Resume
+          </a>
+        </div>
 
         <div className="hero-icons">
           <a href="mailto:nk2616563@gmail.com">
