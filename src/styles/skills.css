@@ -1,42 +1,112 @@
-.skills {
-  padding: 100px 8%;
+.skills-section {
+  padding: 90px 10%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-.skills-list {
-  max-width: 700px;
-  margin: auto;
+.skills-section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ITEM */
-.skill-item {
-  margin-bottom: 26px;
+.section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, #7c7cff, #00ffe7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-group {
+  margin-bottom: 60px;
+}
+
+.group-title {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #b9b9ff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Floating glass card */
+.skill-card {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0, 255, 231, 0.25);
 }
 
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  font-weight: 500;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #fff;
 }
 
-/* BAR */
+.skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+}
+
+.skill-level {
+  color: #00ffe7;
+}
+
+/* Progress bar */
 .skill-bar {
   width: 100%;
   height: 10px;
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, #38bdf8, #3b9775);
   border-radius: 10px;
-  animation: grow 1.8s ease forwards;
+  background: linear-gradient(90deg, #7c7cff, #00ffe7, #7c7cff);
+  background-size: 200% 200%;
+  animation: fillBar 1.5s ease forwards, gradientMove 3s infinite;
 }
 
-@keyframes grow {
+@keyframes fillBar {
   from {
     width: 0;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

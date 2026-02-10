@@ -1,3 +1,24 @@
+:root {
+  --bg: #0b0d14;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.2);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg: #f8f9fc;
+  --text: #0b0d14;
+  --card-bg: rgba(0, 0, 0, 0.06);
+  --border: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
 * {
   margin: 0;
   padding: 0;

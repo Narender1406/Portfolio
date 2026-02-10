@@ -2,34 +2,35 @@ import { useEffect, useState } from "react";
 import "../styles/theme-toggle.css";
 
 export default function ThemeToggle() {
-  const [isLight, setIsLight] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  // Load theme on first render
+  // Load saved theme
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-      setIsLight(true);
-      document.body.classList.add("light");
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark";
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
     }
   }, []);
 
-  // Update theme
+  // Apply theme
   useEffect(() => {
-    if (isLight) {
-      document.body.classList.add("light");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.body.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    }
-  }, [isLight]);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <button
       className="theme-toggle"
-      onClick={() => setIsLight((prev) => !prev)}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-label="Toggle theme"
     >
-      {isLight ? "🌙 Dark Mode" : "☀ Light Mode"}
+      <span className={`icon ${theme}`}>
+        
+      </span>
+      <span className="label">
+        
+      </span>
     </button>
   );
 }

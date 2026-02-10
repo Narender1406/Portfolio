@@ -1,15 +1,41 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import "../styles/navbar.css";
+import { useTheme } from "./ThemeContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { theme, toggleTheme } = useTheme(); // THEME HOOK
+
+  // Scroll effect for glass navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        <span className="logo">←→</span>
+        {/* MENU BUTTON - TOP LEFT */}
+        <button
+          className="menu-btn left"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
 
+        {/* LOGO */}
+        <a href="#home" className="logo">
+          <span></span>
+        </a>
+
+        {/* NAV LINKS */}
         <ul className={`nav-links ${open ? "open" : ""}`}>
           <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setOpen(false)}>About</a></li>
@@ -18,8 +44,9 @@ export default function Navbar() {
           <li><a href="#experience" onClick={() => setOpen(false)}>Experience</a></li>
         </ul>
 
-        <button className="menu-btn" onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
+        {/* THEME TOGGLE BUTTON - TOP RIGHT */}
+        <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
+          {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </div>
     </nav>
